@@ -1,0 +1,6 @@
+pause 500
+bitcake_info
+pause 9000
+transaction_burst
+pause 50000
+stop
