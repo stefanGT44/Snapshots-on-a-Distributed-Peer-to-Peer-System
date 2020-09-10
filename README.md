@@ -27,23 +27,22 @@ This algorithm enables multiple nodes to compute the snapshot concurrently by fo
 ### Properties file (config):
 Parameters are read and set during application launch and cannot be changed during operation.<br><br>
 File structure:<br><br>
-servent_count=16 - number of nodes in the system
-clique=false - non complete graph (not important, leftover from past implementation)
-fifo=false - non fifo communication
-snapshot=ly - lay yang variation (not important, leftover from past implementation)
-servent0.port=1100 - port numbers
-servent1.port=1200
-servent2.port=1300
+servent_count=16 - number of nodes in the system<br>
+clique=false - non complete graph (not important, leftover from past implementation)<br>
+fifo=false - non fifo communication<br>
+snapshot=ly - lay yang variation (not important, leftover from past implementation)<br>
+servent0.port=1100 - port numbers<br>
+servent1.port=1200<br>
+servent2.port=1300<br>
+...<br>
+servent0.neighbors=1,2 - graph connections defined<br>
+servent1.neighbors=0<br>
+servent2.neighbors=0,3,4<br>
+...<br>
+servent0.init=true - initiator nodes can initiate a snapshot<br>
+servent1.init=false<br>
+servent2.init=false<br>
 ...
-servent0.neighbors=1,2 - graph connections defined
-servent1.neighbors=0
-servent2.neighbors=0,3,4
-...
-servent0.init=true - initiator nodes can initiate a snapshot
-servent1.init=false
-servent2.init=false
-...
-
 ## Sidenote
 This project was an assignment as a part of the course - Concurrent and Distributed Systems during the 8th semester at the Faculty of Computer Science in Belgrade. All system functionalities were defined in the assignment specifications.
 
