@@ -18,4 +18,37 @@ Also the System.out, System.err and System.in are redirected to files /output/se
 The user can also interact with nodes using the CLI (command line interface). <br>
 The sending of each message is delayed by a small random amount to simulate a realistic distributed system (because the system is tested locally on one machine).
 
-# README IN DEVELOPMENT
+### Lai Yang - Li
+This algorithm is able to computes the correct total balance by storing a separate history, for all potential snapshot initiators, of all sent and recieved transaction messages for all adjecent (neighbour) nodes. This history is used to detect unrecieved transaction messages, and add them to the total balance.
+
+### Specialetti - Kearns
+This algorithm enables multiple nodes to compute the snapshot concurrently by forming so called "regions". When a node receives a snapshot message from a certain initiator, if it's the first snapshot message it receives during concurrent snapshot initiaton, it saves that initiator and belongs to "his" region. All other initiators are declined and a border is formed with their regions. So once these regions are formed, snapshots are computed within them, after which the initiators exchange results in multiple rounds (starting with neighbour regions) untill the final result is formed (all regions exchanged results).
+
+### Properties file (config):
+Parameters are read and set during application launch and cannot be changed during operation.<br><br>
+File structure:<br><br>
+servent_count=16 - number of nodes in the system
+clique=false - non complete graph (not important, leftover from past implementation)
+fifo=false - non fifo communication
+snapshot=ly - lay yang variation (not important, leftover from past implementation)
+servent0.port=1100 - port numbers
+servent1.port=1200
+servent2.port=1300
+...
+servent0.neighbors=1,2 - graph connections defined
+servent1.neighbors=0
+servent2.neighbors=0,3,4
+...
+servent0.init=true - initiator nodes can initiate a snapshot
+servent1.init=false
+servent2.init=false
+...
+
+## Sidenote
+This project was an assignment as a part of the course - Concurrent and Distributed Systems during the 8th semester at the Faculty of Computer Science in Belgrade. All system functionalities were defined in the assignment specifications.
+
+## Download
+You can download the .jar files [here](download/Concurrent-Distribution-Tool.zip).<br>
+
+## Contributors
+- Stefan Ginic - <stefangwars@gmail.com>
