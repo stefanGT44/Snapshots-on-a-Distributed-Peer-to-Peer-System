@@ -1,5 +1,5 @@
 # Snapshots-on-a-P2P-Distributed-System
-Implementation of a <b>snapshot algorithm</b> that retrieves the current total balance (of bitcakes - currency) in a distributed peer to peer system in which a large number of transactions is constantly being made in every moment. The snapshot algorithm is a mix of the <b>Lai Yang - Li</b> and the <b>Spezialetti-Kearns algorithms</b>.
+Implementation of a <b>snapshot algorithm</b> that retrieves the current total balance (of bitcakes - currency) in a distributed peer to peer system in which a large number of transactions are constantly being made. The snapshot algorithm is a mix between the <b>Lai Yang - Li</b> and the <b>Spezialetti-Kearns algorithms</b>.
 
 ## Overview
 The peer to peer network is a graph where communication between nodes is <b>asinhronous and non-FIFO</b>.<br>
