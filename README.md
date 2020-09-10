@@ -39,7 +39,7 @@ servent0.neighbors=1,2 - graph connections defined<br>
 servent1.neighbors=0<br>
 servent2.neighbors=0,3,4<br>
 ...<br>
-servent0.init=true - initiator nodes can initiate a snapshot<br>
+servent0.init=true - only initiator nodes can initiate a snapshot<br>
 servent1.init=false<br>
 servent2.init=false<br>
 ...
