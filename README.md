@@ -57,14 +57,14 @@ If the algorithm works correctly the snapshot result should always be 16000, no 
 Here we take a look at the algorithm output on node 0 after the snapshot is initiated. <br><br>
 ![Alt text](images/ex1.png?raw=true "")<br>
 In this image we can see in the highlighted area that during the snapshot computation process node 0 didn't receive all sent messages from node 1. <br>
-The missing amount on 0 is caught, thanks to the transaction history of both nodes, and added to the bitcake sum.<br><br>
+The missing amount on 0 is caught, thanks to the transaction history of both nodes, and added to the bitcake sum.<br><br><br>
 
 ![Alt text](images/ex2.png?raw=true "")<br>
 In this photo we see the bitcake sum result of this region (node 0 region).<br>
-The final part of combining region results is initiated. <br><br>
+The final part of combining region results is initiated. <br><br><br>
 
 ![Alt text](images/ex3.png?raw=true "")<br>
-Multiple rounds of regions exchanging results. <br><br>
+Multiple rounds of regions exchanging results. <br><br><br>
 
 ![Alt text](images/ex4.png?raw=true "")<br>
 Finally after all regions exchanged results, in the highlighted area we can see the final bitcake sum result of the entire system.
