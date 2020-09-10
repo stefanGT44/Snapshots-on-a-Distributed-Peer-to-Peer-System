@@ -24,6 +24,12 @@ This algorithm is able to computes the correct total balance by storing a separa
 ### Specialetti - Kearns
 This algorithm enables multiple nodes to compute the snapshot concurrently by forming so called "regions". When a node receives a snapshot message from a certain initiator, if it's the first snapshot message it receives during concurrent snapshot initiaton, it saves that initiator and belongs to "his" region. All other initiators are declined and a border is formed with their regions. So once these regions are formed, snapshots are computed within them, after which the initiators exchange results in multiple rounds (starting with neighbour regions) untill the final result is formed (all regions exchanged results).
 
+### Supported commands:
+* pause X (X time in milliseconds)
+* transaction_burst (sends a burst of 5 transaction messages to all neighbors)
+* bitcake_info (initiates a snapshot)
+* stop (stops the node)
+
 ### Properties file (config):
 Parameters are read and set during application launch and cannot be changed during operation.<br><br>
 File structure:<br><br>
