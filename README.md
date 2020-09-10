@@ -49,11 +49,15 @@ servent0.init=true - only initiator nodes can initiate a snapshot<br>
 servent1.init=false<br>
 servent2.init=false<br>
 ...
+
+## Usage example:
+![Alt text](images/ex1.png?raw=true "")<br><br>
+![Alt text](images/ex2.png?raw=true "")<br><br>
+![Alt text](images/ex3.png?raw=true "")<br><br>
+![Alt text](images/ex4.png?raw=true "")<br><br>
+
 ## Sidenote
 This project was an assignment as a part of the course - Concurrent and Distributed Systems during the 8th semester at the Faculty of Computer Science in Belgrade. All system functionalities were defined in the assignment specifications.
-
-## Download
-You can download the .jar files [here](download/Concurrent-Distribution-Tool.zip).<br>
 
 ## Contributors
 - Stefan Ginic - <stefangwars@gmail.com>
