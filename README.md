@@ -2,9 +2,9 @@
 Implementation of a <b>snapshot algorithm</b> that retrieves the current total balance (of bitcakes - currency) in a distributed peer to peer system in which a large number of transactions are constantly being made. The snapshot algorithm is a mix between the <b>Lai Yang - Li</b> and the <b>Spezialetti-Kearns algorithms</b>.
 
 ## Overview
-The peer to peer network is a graph where communication between nodes is <b>asinhronous and non-FIFO</b>.<br>
-Two nodes can communicate only if they are connected (adjecent) on the graph. <br>
-Each node has a starting bitcake amount. Constant transactions rapidly change this value, which in addition to the asinhronous and non-FIFO communication makes it hard to retrieve the corrent total currency in the system, due to late or unrecieved transaction messages at the time of computation. <br>
+The peer to peer network is a graph where communication between nodes is <b>asynchronous and non-FIFO</b>.<br>
+Two nodes can communicate only if they are connected (adjacent) on the graph. <br>
+Each node has a starting bitcake amount. Constant transactions rapidly change this value, which in addition to the asynchronous and non-FIFO communication makes it hard to retrieve the current total currency in the system, due to late or unreceived transaction messages at the time of computation. <br>
 This problem is solved by a mix of two algorithms:
 1. Lai Yang - Li variation (enables each node to perform multiple snapshots at a time)
 2. Specialetti - Kearns (enables multiple nodes to perform a snapshot concurrently by working together)
@@ -19,10 +19,10 @@ The user can also interact with nodes using the CLI (command line interface). <b
 The sending of each message is delayed by a small random amount to simulate a realistic distributed system (because the system is tested locally on one machine).
 
 ### Lai Yang - Li
-This algorithm is able to computes the correct total balance by storing a separate history, for all potential snapshot initiators, of all sent and recieved transaction messages for all adjecent (neighbour) nodes. This history is used to detect unrecieved transaction messages, and add them to the total balance.
+This algorithm is able to computes the correct total balance by storing a separate history, for all potential snapshot initiators, of all sent and received transaction messages for all adjacent (neighbor) nodes. This history is used to detect unreceived transaction messages, and add them to the total balance.
 
 ### Specialetti - Kearns
-This algorithm enables multiple nodes to compute the snapshot concurrently by forming so called "regions". When a node receives a snapshot message from a certain initiator, if it's the first snapshot message it receives during concurrent snapshot initiaton, it saves that initiator and belongs to "his" region. All other initiators are declined and a border is formed with their regions. So once these regions are formed, snapshots are computed within them, after which the initiators exchange results in multiple rounds (starting with neighbour regions) untill the final result is formed (all regions exchanged results).
+This algorithm enables multiple nodes to compute the snapshot concurrently by forming so called "regions". When a node receives a snapshot message from a certain initiator, if it's the first snapshot message it receives during concurrent snapshot initiation, it saves that initiator and belongs to "his" region. All other initiators are declined and a border is formed with their regions. So once these regions are formed, snapshots are computed within them, after which the initiators exchange results in multiple rounds (starting with neighbor regions) until the final result is formed (all regions exchanged results).
 
 ### Supported commands:
 * pause X (X time in milliseconds)
