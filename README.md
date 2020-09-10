@@ -28,9 +28,9 @@ This algorithm enables multiple nodes to compute the snapshot concurrently by fo
 Parameters are read and set during application launch and cannot be changed during operation.<br><br>
 File structure:<br><br>
 servent_count=16 - number of nodes in the system<br>
-clique=false - non complete graph (not important, leftover from past implementation)<br>
+clique=false - (not important, leftover from past implementation)<br>
 fifo=false - non fifo communication<br>
-snapshot=ly - lay yang variation (not important, leftover from past implementation)<br>
+snapshot=ly - (not important, leftover from past implementation)<br>
 servent0.port=1100 - port numbers<br>
 servent1.port=1200<br>
 servent2.port=1300<br>
