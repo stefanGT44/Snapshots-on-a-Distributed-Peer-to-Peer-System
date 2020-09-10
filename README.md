@@ -54,13 +54,13 @@ servent2.init=false<br>
 In this example there are 16 nodes in the network, 4 of them are initiators (nodes 0, 6, 10, 14). <br>
 Each node started with 1000 bitcakes, so there are 16000 bitcakes in the system. <br>
 If the algorithm works correctly the snapshot result should always be 16000, no matter how many transactions are concurrently happening, and at what time.<br>
-Here we take a look at the algorithm output on node 0 after the snapshot is initiated. <br><br>
+Here we take a look at the algorithm output on node\[0\] after the snapshot is initiated. <br><br>
 ![Alt text](images/ex1.png?raw=true "")<br>
-In this image we can see in the highlighted area that during the snapshot computation process node 0 didn't receive all sent messages from node 1. <br>
-The missing amount on 0 is caught, thanks to the transaction history of both nodes, and added to the bitcake sum.<br><br><br>
+In this image we can see in the highlighted area that during the snapshot computation process node\[0\] didn't receive all sent messages from node\[1\]. <br>
+The missing amount on node\[0\] is caught, thanks to the transaction history of both nodes, and added to the bitcake sum.<br><br><br>
 
 ![Alt text](images/ex2.png?raw=true "")<br>
-In this photo we see the bitcake sum result of this region (node 0 region).<br>
+In this photo we see the bitcake sum result of this region (node\[0\] region).<br>
 The final part of combining region results is initiated. <br><br><br>
 
 ![Alt text](images/ex3.png?raw=true "")<br>
