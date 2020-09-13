@@ -16,7 +16,7 @@ To run the system, a MultipleServentStarter class is provided. This class starts
 The user specifies a network graph in the config file which the MultipleServentStarter reads and provides Nodes with their specified port and id number via the program arguments.<br>
 Also the System.out, System.err and System.in are redirected to files /output/serventID_out.txt, /error/serventID_err.txt and /input/serventID_in.txt, to allow the user to supply all nodes with input commands simultaneously. <br>
 The user can also interact with nodes using the CLI (command line interface). <br>
-The sending of each message is delayed by a small random amount to simulate a realistic distributed system (because the system is tested locally on one machine).
+The sending of each message is <b>delayed</b> by a small random amount to <b>simulate a realistic distributed system</b> (because the system is tested locally on one machine).
 
 ### Lai Yang - Li
 This algorithm is able to computes the correct total balance by storing a separate history, for all potential snapshot initiators, of all sent and received transaction messages for all adjacent (neighbor) nodes. This history is used to detect unreceived transaction messages, and add them to the total balance.
