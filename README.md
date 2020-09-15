@@ -22,7 +22,7 @@ The sending of each message is <b>delayed</b> by a small random amount to <b>sim
 This algorithm is able to compute the correct total balance by storing a separate history, for all potential snapshot initiators, of all sent and received transaction messages for all adjacent (neighbor) nodes. This history is used to detect unreceived transaction messages, and add them to the total balance.
 
 ### Specialetti - Kearns
-This algorithm enables multiple nodes to compute the snapshot concurrently by forming so called "regions". When a node receives a snapshot message from a certain initiator, if it's the first snapshot message it receives during concurrent snapshot initiation, it saves that initiator and belongs to "his" region. All other initiators are declined and a border is formed with their regions. So once these regions are formed, snapshots are computed within them, after which the initiators exchange results in multiple rounds (starting with neighbor regions) until the final result is formed (all regions exchanged results).
+This algorithm enables multiple nodes to compute the snapshot concurrently by forming so called "regions". When a node receives a snapshot message from a certain initiator, if it's the first snapshot message it receives during concurrent snapshot initiation, it saves that initiator and belongs to "his" region. All other initiators are declined and a border is formed with their regions. Once these regions are formed, snapshots are computed within them, after which the initiators exchange results in multiple rounds (starting with neighbor regions) until the final result is formed (all regions exchanged results).
 
 ### Supported commands:
 * pause X (pauses the CLI for X amount of seconds, useful for timing certain input commands during testing)
@@ -51,7 +51,7 @@ servent2.init=false<br>
 ...
 
 ## Usage example:
-In this example there are 16 nodes in the network, 4 of them are initiators (nodes 0, 6, 10, 14). <br>
+In this example there are 16 nodes in the network, 4 of them are initiators (nodes 0, 6, 10, 14) and initiate a snapshot concurrently. <br>
 Each node started with 1000 bitcakes, so there are 16000 bitcakes in the system. <br>
 If the algorithm works correctly the snapshot result should always be 16000, no matter how many transactions are concurrently happening, and at what time.<br>
 Here we take a look at the algorithm output on node\[0\] after the snapshot is initiated. <br><br>
