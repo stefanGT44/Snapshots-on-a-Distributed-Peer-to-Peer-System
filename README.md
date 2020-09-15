@@ -19,7 +19,7 @@ The user can also interact with nodes using the CLI (command line interface). <b
 The sending of each message is <b>delayed</b> by a small random amount to <b>simulate a realistic distributed system</b> (because the system is tested locally on one machine).
 
 ### Lai Yang - Li
-This algorithm is able to computes the correct total balance by storing a separate history, for all potential snapshot initiators, of all sent and received transaction messages for all adjacent (neighbor) nodes. This history is used to detect unreceived transaction messages, and add them to the total balance.
+This algorithm is able to compute the correct total balance by storing a separate history, for all potential snapshot initiators, of all sent and received transaction messages for all adjacent (neighbor) nodes. This history is used to detect unreceived transaction messages, and add them to the total balance.
 
 ### Specialetti - Kearns
 This algorithm enables multiple nodes to compute the snapshot concurrently by forming so called "regions". When a node receives a snapshot message from a certain initiator, if it's the first snapshot message it receives during concurrent snapshot initiation, it saves that initiator and belongs to "his" region. All other initiators are declined and a border is formed with their regions. So once these regions are formed, snapshots are computed within them, after which the initiators exchange results in multiple rounds (starting with neighbor regions) until the final result is formed (all regions exchanged results).
